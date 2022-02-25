@@ -27,7 +27,7 @@ public class Especialidades {
     private Colaborador colaborador;
 
     public String getEspecialidade() {
-        return especialidade;
+        return especialidade ;
     }
 
     public void setEspecialidade(String especialidade) {

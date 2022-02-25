@@ -1,5 +1,5 @@
 insert into colaborador
-(colaborador_id, nome, nivelprofissional, semestreatual,donopost) 
+(colaborador_id, nome, nivelprofissional, semestreatual,donopost)
 values
 (null,'Franklin','estagiario','4','frank'),
 (null,'Henrique','estagiario','3','frank'),
