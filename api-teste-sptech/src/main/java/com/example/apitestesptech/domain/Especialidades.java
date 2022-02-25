@@ -9,23 +9,38 @@ import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
+@Table(name = "especialidades")
 public class Especialidades {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Integer especialidade_id;
+    @Column(name = "id_especialidade")
+    private Integer id;
 
     private String especialidade;
 
     private String nivel;
 
+
     @ManyToOne
-    @JoinColumn(name = "colaborador_id",referencedColumnName = "colaborador_id")
     private Colaborador colaborador;
+
+    public String getEspecialidade() {
+        return especialidade ;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
 
 
 }

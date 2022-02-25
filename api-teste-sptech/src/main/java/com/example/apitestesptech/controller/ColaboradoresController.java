@@ -41,6 +41,8 @@ public class ColaboradoresController {
         return repository.findAll();
     }
     @GetMapping("/todos/dono/{donopost}")
+    //
+
     public List<Colaborador>getColaboradorWhereDonoPost(@PathVariable String donopost){
 
         return repository.findAllByDonopost(donopost);

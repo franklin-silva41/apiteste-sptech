@@ -7,7 +7,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
 public class Colaborador {
 
 
@@ -24,23 +23,16 @@ public class Colaborador {
 
     private String donopost;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+
     @JoinColumn(name = "id_especialidade")
+    @OneToOne(cascade = CascadeType.ALL)
     private Especialidades especialidades;
 
-    public String getDonopost() {
-        return donopost;
-    }
-
-    public void setDonopost(String donopost) {
-        this.donopost = donopost;
-    }
-
-    public Integer getId() {
+    public Integer getColaborador_id() {
         return colaborador_id;
     }
 
-    public void setId(Integer id) {
+    public void setColaborador_id(Integer colaborador_id) {
         this.colaborador_id = colaborador_id;
     }
 
@@ -66,5 +58,21 @@ public class Colaborador {
 
     public void setSemestreAtual(String semestreAtual) {
         this.semestreAtual = semestreAtual;
+    }
+
+    public String getDonopost() {
+        return donopost;
+    }
+
+    public void setDonopost(String donopost) {
+        this.donopost = donopost;
+    }
+
+    public Especialidades getEspecialidades() {
+        return especialidades;
+    }
+
+    public void setEspecialidades(Especialidades especialidades) {
+        this.especialidades = especialidades;
     }
 }
