@@ -1,9 +1,15 @@
 package com.example.apitestesptech.domain;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.springframework.validation.annotation.Validated;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -15,12 +21,18 @@ public class Colaborador {
     @Column(name = "colaborador_id")
     private Integer colaborador_id;
 
+    // TODO VALIDAR TUDOOOOOO
+
+    @Size(max = 225)
     private String nome;
 
+    @Size(max = 225)
     private String nivelProfissional;
 
+    @Size(max = 225)
     private String semestreAtual;
 
+    @Size(max = 225)
     private String donopost;
 
 

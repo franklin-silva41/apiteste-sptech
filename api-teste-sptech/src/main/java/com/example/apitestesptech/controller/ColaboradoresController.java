@@ -18,13 +18,14 @@ public class ColaboradoresController {
     @Autowired
     private ColaboradorRepository repository;
 
-   /** @GetMapping()
-    public String getStringTeste(){
-        return "Teste api";
-    }**/
+    /**
+     * @GetMapping() public String getStringTeste(){
+     * return "Teste api";
+     * }
+     **/
 
     @PostMapping("/colaborador")
-        public ResponseEntity<?> postColab(@RequestBody Colaborador colaborador){
+    public ResponseEntity<?> postColab(@RequestBody Colaborador colaborador) {
         repository.save(colaborador);
 
         return ResponseEntity.status(201).build();
@@ -33,17 +34,19 @@ public class ColaboradoresController {
 
     @GetMapping("/{donopost}/procurarcolab/{findColab}")
     public List<Colaborador> getEstagiario(@PathVariable String findColab,
-                                            @PathVariable String donopost){
-    return repository.findByNivelProfissionalByDonopost(findColab, donopost);
+                                           @PathVariable String donopost) {
+        return repository.findByNivelProfissionalByDonopost(findColab, donopost);
     }
+
     @GetMapping("/todos")
-    public List<Colaborador> getTodos(){
+    public List<Colaborador> getTodos() {
         return repository.findAll();
     }
+
     @GetMapping("/todos/dono/{donopost}")
     //
 
-    public List<Colaborador>getColaboradorWhereDonoPost(@PathVariable String donopost){
+    public List<Colaborador> getColaboradorWhereDonoPost(@PathVariable String donopost) {
 
         return repository.findAllByDonopost(donopost);
     }
